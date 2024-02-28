@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        .header{
+            background-color: #59b83f;
+            height: 120px;
+            width: 100%;
+            text-align: center;
+            font-size: 300%;
+            font-family: Verdana;
+            color: #ffffff;
+        }
+        .main{
+            background-color: #caffbc;
+            height: calc(100vh - 160px) ;
+            width: 100%;
+            font-family: verdana;
+            
+        }
+        .footer{
+            background-color: #000;
+            width: 100%;
+            height: 40px;
+            position: fixed;
+            bottom: 0;
+
+        }
+
+        .input{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50% , 0);
+
+        }
+
+        .text{
+            position: absolute;
+            left: 42%;
+            transform: translate(-50% , 0);
+            font-size: 150%;
+            
+        }
+
+        .result{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50% , 0);
+            font-size: 200%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Calculadora IMC</div>
+    <div class="main"><form>
+
+       <br><br><br> 
+        <label class="text" for="peso">Peso (kg)</label><br><br>
+        <input class="input" size="50" type="text" id="peso" name="peso" placeholder="xx,x kg"><br><br>
+
+        <label class="text" for="altura">Altura (m)</label><br><br>
+        <input class="input" size="50" type="text" id="altura" name="altura" placeholder="x,xx m"><br><br>
+
+        <label class="result" for="resultado">RESULTADO</label>
+
+      </form> </div>
+    <div class="footer"></div>
+</body>
+</html>
