@@ -33,8 +33,8 @@ function operator(value){
     }else {
         getOpFromStack(value);
     }
-    addOpStack(value);
     display2.value += value;
+    addOpStack(value);
 }
 
 function calculate (value) {
@@ -51,6 +51,9 @@ function calculate (value) {
 }
 
 function clearDisplay() {
+    if(!number_complete){
+        document.getElementById("secondDisplay").value = "";
+    }
     document.getElementById("display").value = "";
     number_complete = false;
 }
