@@ -2,45 +2,52 @@ let numbers_stack = [];
 let operator_stack = [];
 let number_complete = false;
 
-
 function appendToDisplay(value){
     let display = document.getElementById("display");
+    let display2 = document.getElementById("secondDisplay");
 
     if (number_complete)
         clearDisplay();
 
     if(!(value == '0' && display.value == '0') &&
-    (value != '.' || display.value.indexOf('.')<0)){
+    (value != '.' || display.value.indexOf('.') < 0)){
 
-            if(display.value == '0' && value != '.'){
+        if(display.value == '0' && value != '.'){
             display.value = value;
-            } else{
+            display2.value = value;
+        } else{
             display.value += value;
+            display2.value += value;
         }
     }
 }
 
 function operator(value){
+    display2 = document.getElementById("secondDisplay");
     if(!number_complete){
-    addNumStack();
-    addOpStack(value);
+        addNumStack();
+    while(lengthOpStack() > 0 && !precedence(topOpStack(), value)){
+        let result = partialCalculate();
+        addResultStack(result);
+        }
     }else {
-        remOpFromStack(value);
-        addOpStack(value);
+        getOpFromStack(value);
     }
-
+    addOpStack(value);
+    display2.value += value;
 }
 
-function calculate () {
+function calculate (value) {
+    display2 = document.getElementById("secondDisplay");
     addNumStack();
-   // alert(numbers_stack + '\n' + operator_stack);
-
-    let result = partialCalculate();
-    document.getElementById("display").value =  result;
-    number_complete = false;
-    
-    numbers_stack = [];
-    operator_stack = [];
+    let result = 0;
+    while(lengthOpStack() > 0){
+        result = partialCalculate();
+        addResultStack(result);
+    }
+    display2.value += value;
+    display2.value += result;
+    document.getElementById("display").value = result;
 }
 
 function clearDisplay() {
@@ -50,27 +57,50 @@ function clearDisplay() {
 
 function backspace() {
     var displayValue = document.getElementById("display").value;
-    document.getElementById("display").value = displayValue.substring(0,displayValue.length -1);
+    document.getElementById("display").value = displayValue.substring(
+    0,displayValue.length -1);
 }
 
 function addNumStack(){
-    let number = document.getElementById("display");
+    let number = document.getElementById("display").value;
     number_complete = true;
     numbers_stack.push(number);
 }
 
-function addOpStack(){
+function addResultStack(number){
+    numbers_stack.push(number);
+}
+
+function addOpStack(value){
     operator_stack.push(value);
 }
 
-function remOpFromStack(){
-    operator_stack.pop();
+function getOpFromStack(value){
+    return operator_stack.pop();
 }
 
 function partialCalculate() {
     let n2 = numbers_stack.pop();
     let n1 = numbers_stack.pop();
-    let op = operator_stack.pop();
+    let op = getOpFromStack();
     let result = eval(n1 + op + n2);
     return result;
+}
+
+function precedence(op1,op2) {
+    let operators = new Map([
+        ['+', '1'],
+        ['-', '1'],
+        ['*', '2'],
+        ['/', '2']
+    ]);
+    return operators.get(op2) > operators.get(op1);
+}
+
+function topOpStack(){
+    return operator_stack[operator_stack.length-1];
+}
+
+function lengthOpStack() {
+    return operator_stack.length;
 }
