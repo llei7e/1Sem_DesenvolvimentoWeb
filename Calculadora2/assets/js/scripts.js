@@ -2,6 +2,16 @@ let numbers_stack = [];
 let operator_stack = [];
 let number_complete = false;
 
+function inFix(){
+    
+}
+function postFix(){
+
+}
+function preFix(){
+
+}
+
 function appendToDisplay(value){
     let display = document.getElementById("display");
     let display2 = document.getElementById("secondDisplay");

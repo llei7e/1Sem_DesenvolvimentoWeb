@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+.loginNoturno{
+    width: 30vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.login{
+    width: 30vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginNoturno h1 {
+    width: 30vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.login h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.login p{
+}
+
+.usuario{
+    font-size: 20px;
+    width: 75%;
+    margin-bottom: 5%;
+    padding: 5%;
+    border-radius: 10px;
+    border-color: #172b61;
+    outline: none;
+    cursor: text;
+    font-family: Poppins, sans-serif;
+}
+.usuario:focus{
+    border-color: #e7e7e7;
+}
+
+.senha{
+    font-size: 20px;
+    width: 75%;
+    margin-bottom: 5%;
+    padding: 5%;
+    border-radius: 10px;
+    border-color: #172b61;
+    outline: none;
+    cursor: text;
+    font-family: Poppins, sans-serif;
+}
+.senha:focus{
+    border-color: #e7e7e7;
+}
+
+.enviar{
+    width: 90%;
+    font-size: 20px;
+    padding: 3%;
+    background-color: #7698ed;
+    outline: none;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #172b61;
+    color: white;
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+}
+.enviar:hover{
+    border-color: white;
+    background-color:#172b61 ;
+}
+
+.figura{
+    width: 70vw;
+    height: 100%;
+}
+.figura img{
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
