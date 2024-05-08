@@ -8,6 +8,9 @@ function inFix(){
 function postFix(){
 
 }
+function preFix(){
+
+}
 
 function appendToDisplay(value){
     let display = document.getElementById("display");
@@ -102,8 +105,7 @@ function precedence(op1,op2) {
         ['+', '1'],
         ['-', '1'],
         ['*', '2'],
-        ['/', '2'],
-        ['*', '2'],
+        ['/', '2']
     ]);
     return operators.get(op2) > operators.get(op1);
 }
