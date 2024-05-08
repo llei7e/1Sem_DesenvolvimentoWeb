@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Avaliativa - Duplas</title>
+</head>
+<body>
+    <div class="containerCima">
+        <h1>Formulário</h1>
+
+        <p>Nome</p>
+        <input id="campoNome" type="text" class="inputReceb" placeholder="Nome Completo">
+        <p>CPF</p>
+        <input id="campoCpf" type="text" class="inputReceb" placeholder="xxx.xxx.xxx-xx">
+        <p>Email</p>
+        <input id="campoEmail" type="text" class="inputReceb" placeholder="email@xxxxx.xxx.xx">
+
+        <input id="botao" type="button" class="buttonAdd" value="Adicionar" onclick="addLine()">
+
+    </div>
+
+    <div class="indexTabela">
+        <span>Nome</span>
+        <span>CPF</span>
+        <span>Email</span>
+        <span>Editar/Excluir</span>
+    </div>
+    <div id="linhasTabela" class="linhasTabelas">
+    </div>
+
+    
+</body>
+</html>

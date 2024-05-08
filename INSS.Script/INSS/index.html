@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p class="titulos">Salário Bruto:</p>
+        <input type="number" class="input" name="bruto" id="bruto" placeholder="R$ 0,00">
+
+        <p class="titulos">Numero de Dependentes:</p>
+        <input type="number" class="input" name="dependentes" id="dependentes" placeholder="0">
+
+        <p class="titulos">INSS</p>
+        <input type="number" class="inputR" name="inss" id="inss" placeholder="R$ 0,00" readonly>
+
+        <p class="titulos">IRRF</p>
+        <input type="number" class="inputR" name="irrf" id="irrf" placeholder="R$ 0,00" readonly>
+
+        <p class="titulos">Salário Líquido</p>
+        <input type="number" class="inputR" name="liquido" id="liquido" placeholder="R$ 0,00"readonly>
+
+        <input type="button" value="Calcular" id="calc" onclick="calc()">
+    </div>
+    
+</body>
+</html>
